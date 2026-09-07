@@ -58,9 +58,7 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   p {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
+    @apply leading-relaxed;
   }
 }
 

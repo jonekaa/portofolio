@@ -68,18 +68,8 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* Actions (CMS Studio Link + Theme Toggle + Mobile Menu Toggle) */}
+        {/* Actions (Theme Toggle + Mobile Menu Toggle) */}
         <div className="flex items-center gap-2">
-          {/* CMS Studio Portal Link */}
-          <Link
-            href="/studio"
-            className="hidden sm:inline-flex items-center gap-1 rounded-md border border-border/60 bg-muted/30 px-2.5 py-1 text-xs font-mono text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-            title="Manage Content via Studio"
-          >
-            <Terminal className="h-3 w-3" />
-            <span>Studio</span>
-          </Link>
-
           <ThemeToggle />
 
           {/* Mobile Menu Button */}
@@ -121,15 +111,6 @@ export function Navbar() {
                 </Link>
               );
             })}
-            <div className="pt-2 border-t border-border mt-2">
-              <Link
-                href="/studio"
-                className="flex items-center gap-2 px-3 py-2 text-xs font-mono text-muted-foreground hover:text-foreground"
-              >
-                <Terminal className="h-3.5 w-3.5" />
-                <span>Open CMS Studio (/studio)</span>
-              </Link>
-            </div>
           </nav>
         </div>
       )}

@@ -69,9 +69,6 @@ export function Footer() {
             <Link href="/contact" className="hover:text-foreground transition-colors">
               Contact
             </Link>
-            <Link href="/studio" className="hover:text-foreground transition-colors font-mono">
-              CMS Studio
-            </Link>
           </div>
         </div>
       </div>

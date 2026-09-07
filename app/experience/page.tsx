@@ -300,7 +300,7 @@ export default function ExperiencePage() {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xs font-mono font-semibold uppercase text-indigo-600 dark:text-indigo-400">
+            <h3 className="text-xs font-mono font-semibold uppercase text-teal-600 dark:text-teal-400">
               Web Architecture & DevOps
             </h3>
             <div className="flex flex-wrap gap-1.5">

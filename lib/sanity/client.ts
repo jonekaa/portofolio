@@ -1,4 +1,4 @@
-import { createClient } from "next-sanity";
+import { createClient } from "@sanity/client";
 import { projectId, dataset, apiVersion, isSanityConfigured } from "./config";
 import { projectsData, Project } from "../data/projects";
 import { blogPostsData, BlogPost } from "../data/blog";

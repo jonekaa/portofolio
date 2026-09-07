@@ -1,4 +1,5 @@
-import { defineField, defineType } from "sanity";
+const defineType = <T,>(config: T): T => config;
+const defineField = <T,>(config: T): T => config;
 
 export const projectSchema = defineType({
   name: "project",
@@ -9,7 +10,7 @@ export const projectSchema = defineType({
       name: "title",
       title: "Project Title",
       type: "string",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: "slug",
@@ -19,7 +20,7 @@ export const projectSchema = defineType({
         source: "title",
         maxLength: 96,
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: "subtitle",
@@ -37,7 +38,7 @@ export const projectSchema = defineType({
           { title: "Web Applications", value: "Web Applications" },
         ],
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: "isFeatured",
@@ -50,7 +51,7 @@ export const projectSchema = defineType({
       title: "Short Summary",
       type: "text",
       rows: 3,
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: "mainImage",

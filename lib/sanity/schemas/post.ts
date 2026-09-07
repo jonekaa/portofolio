@@ -1,4 +1,5 @@
-import { defineField, defineType } from "sanity";
+const defineType = <T,>(config: T): T => config;
+const defineField = <T,>(config: T): T => config;
 
 export const postSchema = defineType({
   name: "post",
@@ -9,7 +10,7 @@ export const postSchema = defineType({
       name: "title",
       title: "Title",
       type: "string",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: "slug",
@@ -19,14 +20,14 @@ export const postSchema = defineType({
         source: "title",
         maxLength: 96,
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: "excerpt",
       title: "Excerpt / Short Summary",
       type: "text",
       rows: 3,
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: "publishedAt",
@@ -64,7 +65,7 @@ export const postSchema = defineType({
       title: "Body Content",
       type: "text",
       rows: 15,
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     }),
   ],
 });

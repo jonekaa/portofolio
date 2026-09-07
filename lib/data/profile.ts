@@ -26,7 +26,7 @@ export interface Profile {
 export const profileData: Profile = {
   name: "Jonathan Eka Saputra",
   preferredName: "Jon",
-  title: "SCM Fulfillment Specialist & Aspiring Data Scientist",
+  title: "SCM Fulfillment Specialist & Applied Data Scientist",
   roleDescription:
     "Bridging industrial supply chain logistics, operations engineering, and modern data science with Python, Machine Learning, and Intelligent Automation.",
   tagline: "Live like there is no tomorrow",

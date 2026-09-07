@@ -55,7 +55,7 @@ export default function AboutPage() {
           </p>
           <p className="text-muted-foreground">
             Rather than accepting manual spreadsheet friction as an inevitable cost of business, I design and deploy
-            automation utilities—engineering macros in LibreOffice BASIC and Microsoft Excel VBA, and architecting internal
+            automation utilities: engineering macros in LibreOffice BASIC and Microsoft Excel VBA, and architecting internal
             web portals for our Inventory Control teams with interactive spatial routing, distance matrices, and transit calculations.
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function AboutPage() {
             Beyond the Terminal: &ldquo;Live Like There Is No Tomorrow&rdquo;
           </h2>
           <p className="text-muted-foreground">
-            My personal motto—<em>&ldquo;Live like there is no tomorrow&rdquo;</em>—fuels how I approach both my work and personal life:
+            My personal motto, <em>&ldquo;Live like there is no tomorrow,&rdquo;</em> fuels how I approach both my work and personal life:
             with relentless dedication, curiosity, and high energy.
           </p>
 
@@ -109,7 +109,7 @@ export default function AboutPage() {
                   Culture & Travel Routing
                 </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Passionate about exploring diverse landscapes and cultural preservation—from developing algorithms to transliterate
+                  Passionate about exploring diverse landscapes and cultural preservation: from developing algorithms to transliterate
                   endangered Balinese scripts (Aksara Bali) to building smart algorithmic itinerary planners.
                 </p>
               </CardContent>

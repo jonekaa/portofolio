@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { profileData } from "@/lib/data/profile";
-import { Mail, ShieldCheck } from "lucide-react";
+import { Mail, Globe } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
 
 export function Footer() {
@@ -22,13 +22,14 @@ export function Footer() {
           </div>
 
           {/* Center / Social Links */}
-          <div className="flex items-center gap-4 text-muted-foreground">
+          <div className="flex items-center gap-3 text-muted-foreground">
             <a
               href={profileData.github}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md p-2 hover:bg-muted hover:text-foreground transition-colors"
               aria-label="GitHub Profile"
+              title="GitHub Profile"
             >
               <GithubIcon className="h-4 w-4" />
             </a>
@@ -38,33 +39,38 @@ export function Footer() {
               rel="noopener noreferrer"
               className="rounded-md p-2 hover:bg-muted hover:text-foreground transition-colors"
               aria-label="LinkedIn Profile"
+              title="LinkedIn Profile"
             >
               <LinkedinIcon className="h-4 w-4" />
             </a>
             <a
               href={`mailto:${profileData.email}`}
               className="rounded-md p-2 hover:bg-muted hover:text-foreground transition-colors"
-              aria-label="Email Me"
+              aria-label="Send Email"
+              title="Send Email"
             >
               <Mail className="h-4 w-4" />
             </a>
           </div>
 
-          {/* Right Column / Tech Badge */}
-          <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-mono">
-            <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
-            <span>Secure & Static · Next.js 15</span>
+          {/* Right Column / Availability Status */}
+          <div className="flex items-center gap-2 text-xs text-muted-foreground font-mono">
+            <Globe className="h-3.5 w-3.5 text-emerald-500" />
+            <span>Open for Global & Local Remote Roles</span>
           </div>
         </div>
 
         <div className="mt-8 pt-6 border-t border-border/30 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground gap-3">
-          <p>© {currentYear} {profileData.name}. All rights reserved.</p>
+          <p>© {currentYear} {profileData.name}. Crafted with precision and intent.</p>
           <div className="flex items-center gap-4">
             <Link href="/about" className="hover:text-foreground transition-colors">
               About
             </Link>
             <Link href="/projects" className="hover:text-foreground transition-colors">
               Projects
+            </Link>
+            <Link href="/experience" className="hover:text-foreground transition-colors">
+              Experience
             </Link>
             <Link href="/contact" className="hover:text-foreground transition-colors">
               Contact

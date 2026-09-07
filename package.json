@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "studio": "npm run dev --prefix studio-portofolio-jonekaa",
+    "studio:build": "npm run build --prefix studio-portofolio-jonekaa"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",

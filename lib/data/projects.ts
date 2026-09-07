@@ -99,7 +99,7 @@ export const projectsData: Project[] = [
         "Significantly improved customer trust through modern digital presentation.",
       ],
       lessonsLearned:
-        "Effective digital transformation begins with clear user empathy—synthesizing multiple legacy services into an intuitive, frictionless digital interface.",
+        "Effective digital transformation begins with clear user empathy: synthesizing multiple legacy services into an intuitive, frictionless digital interface.",
     },
   },
   {

@@ -133,6 +133,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-foreground transition-colors"
+                    aria-label={`${project.title} GitHub Source`}
                     title="View Source on GitHub"
                   >
                     <GithubIcon className="h-4 w-4" />
@@ -144,6 +145,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-foreground transition-colors"
+                    aria-label={`${project.title} Live Deployment`}
                     title="Open Live Deployment"
                   >
                     <ExternalLink className="h-4 w-4" />

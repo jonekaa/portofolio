@@ -160,15 +160,26 @@ export function StudioGate({ projectId, dataset, isConfigured }: StudioGateProps
         </CardContent>
 
         <CardFooter className="flex flex-wrap items-center justify-between gap-3 border-t border-border/40 pt-4">
-          <a
-            href="https://www.sanity.io/manage"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button className="gap-2">
-              Open Sanity Project Manage <ExternalLink className="h-4 w-4" />
-            </Button>
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href="http://localhost:3333"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="gap-2">
+                Launch Local Studio (Port 3333) <ExternalLink className="h-4 w-4" />
+              </Button>
+            </a>
+            <a
+              href="https://www.sanity.io/manage"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" className="gap-2">
+                Sanity Manage <ExternalLink className="h-4 w-4" />
+              </Button>
+            </a>
+          </div>
 
           <Link href="/api/revalidate?secret=demo-secret" target="_blank">
             <Button variant="outline" size="sm" className="gap-1.5 font-mono text-xs">

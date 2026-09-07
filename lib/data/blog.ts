@@ -37,7 +37,7 @@ By introducing automated macros (via LibreOffice BASIC and Excel VBA) and lightw
 
 ### The Hybrid Advantage
 
-The most impactful solutions happen when domain expertise in logistics meets computational modeling. Understanding why a distribution center is experiencing a stockout—whether it's batch dispatch scheduling, transit delays, or erratic customer purchasing patterns—allows you to engineer features that actually matter to predictive models.
+The most impactful solutions happen when domain expertise in logistics meets computational modeling. Understanding why a distribution center is experiencing a stockout (whether it is batch dispatch scheduling, transit delays, or erratic customer purchasing patterns) allows you to engineer features that actually matter to predictive models.
     `,
   },
   {
@@ -52,7 +52,7 @@ The most impactful solutions happen when domain expertise in logistics meets com
     content: `
 ### The Flaw of Euclidean Distance in Physical Logistics
 
-In geographical information systems (GIS), calculating the distance between two coordinates is mathematically trivial using the Haversine formula. However, in Indonesian supply chain networks—characterized by archipelagic geography, toll networks, and localized freight restrictions—as-the-crow-flies distance is deeply deceptive.
+In geographical information systems (GIS), calculating the distance between two coordinates is mathematically trivial using the Haversine formula. However, in Indonesian supply chain networks (characterized by archipelagic geography, toll networks, and localized freight restrictions), as-the-crow-flies distance is deeply deceptive.
 
 A distribution center located 40 kilometers away across a mountain pass or congested urban artery may take four times longer to reach than a facility 80 kilometers away along an open trans-provincial expressway.
 
@@ -91,7 +91,7 @@ Standard off-the-shelf translation APIs fail completely when encountering these 
 
 In developing our Balinese transliteration engine, I designed a deterministic rule-based tokenizer that performs phonotactic syllabification before applying phonetic character mapping.
 
-By deploying this pipeline via a lightweight Streamlit interface, we enabled students, linguists, and cultural enthusiasts to input Latin phonetic phrases and receive real-time, syntactically correct Aksara Bali script—and vice versa.
+By deploying this pipeline via a lightweight Streamlit interface, we enabled students, linguists, and cultural enthusiasts to input Latin phonetic phrases and receive real-time, syntactically correct Aksara Bali script, and vice versa.
 
 Technology should not only optimize global industries; it should preserve the cultural keystones that anchor our human heritage.
     `,

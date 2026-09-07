@@ -82,7 +82,7 @@ export function StudioClientPortal({
         </h1>
         <p className="text-base text-muted-foreground max-w-2xl leading-relaxed">
           Manage your portfolio case studies, upload project screenshots, and publish blog notes
-          without editing code or touching Git—accessible from any laptop, tablet, or phone.
+          without editing code or touching Git, accessible from any laptop, tablet, or phone.
         </p>
       </header>
 

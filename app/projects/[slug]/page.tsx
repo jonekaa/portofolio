@@ -16,6 +16,7 @@ import {
   Lightbulb,
 } from "lucide-react";
 import { GithubIcon } from "@/components/ui/icons";
+import { formatInlineMarkdown } from "@/components/blog/prose-renderer";
 
 interface ProjectDetailPageProps {
   params: Promise<{
@@ -158,7 +159,7 @@ export default async function ProjectDetailPage({
                 <Lightbulb className="h-5 w-5 text-amber-500" /> Operational Context
               </h2>
               <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-                {caseStudy.overview}
+                {formatInlineMarkdown(caseStudy.overview)}
               </p>
             </div>
           )}
@@ -170,7 +171,7 @@ export default async function ProjectDetailPage({
                 <AlertCircle className="h-5 w-5 text-rose-500" /> The Challenge
               </h2>
               <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-                {caseStudy.challenge}
+                {formatInlineMarkdown(caseStudy.challenge)}
               </p>
             </div>
           )}
@@ -188,7 +189,7 @@ export default async function ProjectDetailPage({
                     className="flex items-start gap-3 text-muted-foreground text-base"
                   >
                     <span className="mt-1 flex h-2 w-2 rounded-full bg-sky-500 flex-shrink-0" />
-                    <span>{item}</span>
+                    <span>{formatInlineMarkdown(item)}</span>
                   </li>
                 ))}
               </ul>
@@ -202,7 +203,7 @@ export default async function ProjectDetailPage({
                 <CheckCircle2 className="h-5 w-5 text-emerald-500" /> The Solution
               </h2>
               <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-                {caseStudy.solution}
+                {formatInlineMarkdown(caseStudy.solution)}
               </p>
             </div>
           )}
@@ -220,7 +221,7 @@ export default async function ProjectDetailPage({
                     className="flex items-start gap-3 text-muted-foreground text-base"
                   >
                     <CheckCircle2 className="h-5 w-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground">{result}</span>
+                    <span className="text-foreground">{formatInlineMarkdown(result)}</span>
                   </li>
                 ))}
               </ul>

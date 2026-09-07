@@ -155,30 +155,4 @@ export const projectsData: Project[] = [
     liveUrl: "https://jonekaa.github.io/itinerary-planner",
     tags: ["JavaScript", "Travel Tech", "UX Design", "Algorithms"],
   },
-  {
-    slug: "hybrid-elite-athlete",
-    title: "Hybrid Elite Athlete Tracker",
-    subtitle: "Data-driven training planner balancing concurrent endurance and strength performance.",
-    category: "Data Science & ML",
-    isFeatured: false,
-    hasDeepDive: false,
-    date: "2025",
-    summary:
-      "A Python-based tracking system and progressive overload calculator built for hybrid athletes balancing marathon running and powerlifting disciplines.",
-    githubUrl: "https://github.com/jonekaa/hybrid-elite-athlete",
-    tags: ["Python", "Data Science", "Fitness Analytics", "Algorithms"],
-  },
-  {
-    slug: "supertype-fellowship",
-    title: "Supertype Fellowship: Advanced ML & Data Engineering",
-    subtitle: "Predictive modeling, exploratory data analysis, and production ML pipelines.",
-    category: "Data Science & ML",
-    isFeatured: false,
-    hasDeepDive: false,
-    date: "2024",
-    summary:
-      "Intensive data science projects completed during the Supertype Fellowship covering statistical inference, supervised learning, and algorithmic feature engineering.",
-    githubUrl: "https://github.com/jonekaa/supertype-fellowship",
-    tags: ["Machine Learning", "Python", "Data Analysis", "Feature Engineering"],
-  },
 ];

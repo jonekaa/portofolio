@@ -57,6 +57,11 @@
     @apply bg-background text-foreground antialiased selection:bg-foreground selection:text-background;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
 }
 
 /* Custom subtle code block styling */

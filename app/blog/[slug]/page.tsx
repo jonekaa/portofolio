@@ -6,6 +6,7 @@ import { getBlogPostBySlug, getBlogPosts } from "@/lib/sanity/client";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
+import { MarkdownProse } from "@/components/blog/prose-renderer";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -92,39 +93,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </header>
 
       {/* Article Body */}
-      <article className="prose dark:prose-invert max-w-none text-foreground/90 space-y-6 leading-relaxed text-base sm:text-lg">
-        {post.content.split("\n\n").map((block, idx) => {
-          const trimmed = block.trim();
-          if (!trimmed) return null;
-
-          if (trimmed.startsWith("### ")) {
-            return (
-              <h2
-                key={idx}
-                className="text-xl sm:text-2xl font-bold tracking-tight text-foreground pt-4"
-              >
-                {trimmed.replace("### ", "")}
-              </h2>
-            );
-          }
-
-          if (trimmed.startsWith("- ") || trimmed.startsWith("1. ")) {
-            const lines = trimmed.split("\n");
-            return (
-              <ul key={idx} className="space-y-2 pl-4 list-disc text-muted-foreground">
-                {lines.map((line, lIdx) => (
-                  <li key={lIdx}>{line.replace(/^[-*0-9.]+\s*/, "")}</li>
-                ))}
-              </ul>
-            );
-          }
-
-          return (
-            <p key={idx} className="text-muted-foreground leading-relaxed">
-              {trimmed}
-            </p>
-          );
-        })}
+      <article className="max-w-none text-foreground/90">
+        <MarkdownProse content={post.content} />
       </article>
 
       {/* Footer Navigation */}

@@ -1,0 +1,77 @@
+# ==========================================
+# Dependencies
+# ==========================================
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# ==========================================
+# Environment & Secrets (NEVER COMMIT)
+# ==========================================
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+*.cert
+
+# Keep template committed
+!.env.example
+
+# ==========================================
+# Next.js Build Outputs & Cache
+# ==========================================
+/.next/
+/out/
+/build
+/dist
+.turbo/
+
+# ==========================================
+# Local AI Assistants & Editor Workspaces
+# ==========================================
+.agents/
+.augment/
+.claude/
+.codebuddy/
+.codewhale/
+.continue/
+.cursor/
+.factory/
+.gemini/
+.github/prompts/
+.kilocode/
+.kiro/
+.opencode/
+.qoder/
+.roo/
+.trae/
+.warp/
+.windsurf/
+.vscode/
+.idea/
+
+# ==========================================
+# Logs & Debugging
+# ==========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================================
+# OS & System Artifacts
+# ==========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# TypeScript Cache
+# ==========================================
+*.tsbuildinfo
+next-env.d.ts

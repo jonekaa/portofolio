@@ -22,6 +22,7 @@ import {
   MapPin,
   CheckCircle2,
   ExternalLink,
+  ArrowUpRight,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -232,36 +233,28 @@ export default function ExperiencePage() {
               <CardWrapper
                 key={idx}
                 {...linkProps}
-                className={`group flex flex-col justify-between rounded-xl border p-4 space-y-3 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 ${
+                className={`group flex flex-col justify-between rounded-xl border border-border/80 bg-card p-4 space-y-3.5 transition-all duration-200 hover:border-sky-500/40 hover:bg-muted/20 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 ${
                   hasLink ? "cursor-pointer" : ""
-                } ${
-                  cert.highlight
-                    ? "border-sky-500/30 bg-sky-500/5 hover:border-sky-500/60 hover:bg-sky-500/10 hover:shadow-sm"
-                    : "border-border/70 bg-card hover:border-foreground/30 hover:bg-muted/30"
                 }`}
               >
                 <div className="space-y-1.5">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider font-medium truncate">
                       {cert.issuer}
                     </span>
-                    {cert.highlight ? (
-                      <span className="flex h-1.5 w-1.5 rounded-full bg-sky-500" title="Highlighted credential" />
-                    ) : (
-                      hasLink && (
-                        <ExternalLink className="h-3 w-3 text-muted-foreground/60 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      )
+                    {hasLink && (
+                      <ExternalLink className="h-3.5 w-3.5 text-muted-foreground/40 group-hover:text-sky-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
                     )}
                   </div>
-                  <p className="text-sm font-semibold text-foreground leading-snug group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                  <h3 className="text-sm font-semibold text-foreground leading-snug group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
                     {cert.title}
-                  </p>
+                  </h3>
                 </div>
 
                 {hasLink && (
-                  <div className="flex items-center gap-1 text-[11px] font-mono text-sky-600 dark:text-sky-400 pt-1">
+                  <div className="pt-2 border-t border-border/40 flex items-center justify-between text-[11px] font-mono text-muted-foreground group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
                     <span>Verify Credential</span>
-                    <ExternalLink className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                 )}
               </CardWrapper>

@@ -133,7 +133,7 @@ export default function ExperiencePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           {educationExperience.map((edu) => (
-            <Card key={edu.id} className="border-border/80 flex flex-col justify-between">
+            <Card key={edu.id} className="border-border/80 flex flex-col">
               <CardHeader className="space-y-2 pb-4">
                 <div className="flex items-center justify-between text-xs font-mono text-muted-foreground">
                   <span>{edu.period}</span>
@@ -146,11 +146,11 @@ export default function ExperiencePage() {
                   {edu.organization}
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4 flex-1 flex flex-col justify-between pt-0">
+              <CardContent className="space-y-4 pt-0">
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed md:min-h-[3.75rem]">
                   {edu.description}
                 </p>
-                <ul className="space-y-2 pt-3 border-t border-border/40 mt-auto">
+                <ul className="space-y-2 pt-3 border-t border-border/40">
                   {edu.highlights.map((h, i) => (
                     <li
                       key={i}
@@ -176,7 +176,7 @@ export default function ExperiencePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {leadershipExperience.map((lead) => (
-            <Card key={lead.id} className="border-border/80 flex flex-col justify-between">
+            <Card key={lead.id} className="border-border/80 flex flex-col">
               <CardHeader className="space-y-1.5 pb-3">
                 <div className="text-xs font-mono text-muted-foreground">
                   {lead.period}
@@ -188,11 +188,11 @@ export default function ExperiencePage() {
                   {lead.organization}
                 </div>
               </CardHeader>
-              <CardContent className="space-y-3 flex-1 flex flex-col justify-between pt-0">
+              <CardContent className="space-y-3 pt-0">
                 <p className="text-xs text-muted-foreground leading-relaxed md:min-h-[3.75rem]">
                   {lead.description}
                 </p>
-                <ul className="space-y-1.5 pt-3 border-t border-border/40 mt-auto">
+                <ul className="space-y-2 pt-3 border-t border-border/40">
                   {lead.highlights.map((h, i) => (
                     <li
                       key={i}

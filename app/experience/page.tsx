@@ -21,6 +21,7 @@ import {
   Calendar,
   MapPin,
   CheckCircle2,
+  ExternalLink,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -215,28 +216,57 @@ export default function ExperiencePage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {certifications.map((cert, idx) => (
-            <div
-              key={idx}
-              className={`rounded-xl border p-4 space-y-1 transition-all ${
-                cert.highlight
-                  ? "border-sky-500/30 bg-sky-500/5 hover:border-sky-500/50"
-                  : "border-border/70 bg-card hover:border-foreground/30"
-              }`}
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono text-muted-foreground uppercase">
-                  {cert.issuer}
-                </span>
-                {cert.highlight && (
-                  <span className="flex h-1.5 w-1.5 rounded-full bg-sky-500" />
+          {certifications.map((cert, idx) => {
+            const hasLink = Boolean(cert.credentialUrl);
+            const CardWrapper = hasLink ? "a" : "div";
+            const linkProps = hasLink
+              ? {
+                  href: cert.credentialUrl,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  "aria-label": `Verify ${cert.title} issued by ${cert.issuer}`,
+                }
+              : {};
+
+            return (
+              <CardWrapper
+                key={idx}
+                {...linkProps}
+                className={`group flex flex-col justify-between rounded-xl border p-4 space-y-3 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 ${
+                  hasLink ? "cursor-pointer" : ""
+                } ${
+                  cert.highlight
+                    ? "border-sky-500/30 bg-sky-500/5 hover:border-sky-500/60 hover:bg-sky-500/10 hover:shadow-sm"
+                    : "border-border/70 bg-card hover:border-foreground/30 hover:bg-muted/30"
+                }`}
+              >
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider">
+                      {cert.issuer}
+                    </span>
+                    {cert.highlight ? (
+                      <span className="flex h-1.5 w-1.5 rounded-full bg-sky-500" title="Highlighted credential" />
+                    ) : (
+                      hasLink && (
+                        <ExternalLink className="h-3 w-3 text-muted-foreground/60 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      )
+                    )}
+                  </div>
+                  <p className="text-sm font-semibold text-foreground leading-snug group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                    {cert.title}
+                  </p>
+                </div>
+
+                {hasLink && (
+                  <div className="flex items-center gap-1 text-[11px] font-mono text-sky-600 dark:text-sky-400 pt-1">
+                    <span>Verify Credential</span>
+                    <ExternalLink className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </div>
                 )}
-              </div>
-              <p className="text-sm font-semibold text-foreground leading-snug">
-                {cert.title}
-              </p>
-            </div>
-          ))}
+              </CardWrapper>
+            );
+          })}
         </div>
       </section>
 

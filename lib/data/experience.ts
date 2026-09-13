@@ -161,46 +161,55 @@ export const certifications: CertificationItem[] = [
   {
     title: "TensorFlow Developer Certificate",
     issuer: "Google / TensorFlow Certificate Program",
+    credentialUrl: "https://www.credential.net/fcd90f06-edc4-41eb-adf1-c276f23a3cb6",
     highlight: true,
   },
   {
     title: "Natural Language Processing (NLP)",
     issuer: "DeepLearning.AI",
+    credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/STNXFVKJDPP6",
     highlight: true,
   },
   {
     title: "TensorFlow: Advanced Techniques Specialization",
     issuer: "DeepLearning.AI",
+    credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/65CT9HGVVAGW",
     highlight: true,
   },
   {
     title: "TensorFlow: Data and Deployment Specialization",
     issuer: "DeepLearning.AI",
+    credentialUrl: "https://coursera.org/share/7579107f2731c762b39dcdb9a159e5d5",
     highlight: false,
   },
   {
     title: "TensorFlow Developer Specialization",
     issuer: "DeepLearning.AI",
+    credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/certificate/FDPMJ56UZP2D",
     highlight: true,
   },
   {
     title: "Google Data Analytics Specialization",
     issuer: "Google Career Certificates",
+    credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/certificate/CVA4MZRTQPHU",
     highlight: true,
   },
   {
     title: "Machine Learning Specialization",
     issuer: "DeepLearning.AI & Stanford University",
+    credentialUrl: "https://coursera.org/share/9b47910611dcc4dce8469fc8167dd92d",
     highlight: true,
   },
   {
     title: "Mathematics for Machine Learning and Data Science Specialization",
     issuer: "DeepLearning.AI",
+    credentialUrl: "https://coursera.org/share/5fab0cb9a8c19c90e305d9122ef00c4f",
     highlight: false,
   },
   {
     title: "Google IT Automation with Python Specialization",
     issuer: "Google Career Certificates",
+    credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/certificate/AAV2EE2E2U92",
     highlight: true,
   },
 ];

@@ -72,10 +72,10 @@ export default async function HomePage() {
             </Button>
           </Link>
           <a
-            href="/resume.pdf"
+            href="/Jonathan%20Eka%20-%20CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            download="Jonathan_Eka_Saputra_CV.pdf"
+            download="Jonathan Eka - CV.pdf"
           >
             <Button variant="outline" size="lg" className="gap-2 font-medium">
               <Download className="h-4 w-4" /> Download CV

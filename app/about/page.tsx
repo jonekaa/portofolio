@@ -122,10 +122,10 @@ export default function AboutPage() {
       <section className="border-t border-border/60 pt-8 flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <a
-            href="/resume.pdf"
+            href="/Jonathan%20Eka%20-%20CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            download="Jonathan_Eka_Saputra_CV.pdf"
+            download="Jonathan Eka - CV.pdf"
           >
             <Button className="gap-2">
               <Download className="h-4 w-4" /> Download Full CV (PDF)

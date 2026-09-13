@@ -50,10 +50,10 @@ export default function ExperiencePage() {
         </div>
 
         <a
-          href="/resume.pdf"
+          href="/Jonathan%20Eka%20-%20CV.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          download="Jonathan_Eka_Saputra_CV.pdf"
+          download="Jonathan Eka - CV.pdf"
         >
           <Button className="gap-2 shrink-0">
             <Download className="h-4 w-4" /> Download CV (PDF)

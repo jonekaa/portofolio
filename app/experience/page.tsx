@@ -131,28 +131,30 @@ export default function ExperiencePage() {
           Education & Fellowships
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           {educationExperience.map((edu) => (
-            <Card key={edu.id} className="border-border/80">
-              <CardHeader className="space-y-1">
+            <Card key={edu.id} className="border-border/80 flex flex-col justify-between">
+              <CardHeader className="space-y-2 pb-4">
                 <div className="flex items-center justify-between text-xs font-mono text-muted-foreground">
                   <span>{edu.period}</span>
                   <Badge variant="outline">{edu.location}</Badge>
                 </div>
-                <CardTitle className="text-lg">{edu.role}</CardTitle>
-                <div className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">
+                <CardTitle className="text-lg leading-snug md:min-h-[3.25rem] flex items-start">
+                  {edu.role}
+                </CardTitle>
+                <div className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 md:min-h-[1.5rem] flex items-center">
                   {edu.organization}
                 </div>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              <CardContent className="space-y-4 flex-1 flex flex-col justify-between pt-0">
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed md:min-h-[3.75rem]">
                   {edu.description}
                 </p>
-                <ul className="space-y-1.5">
+                <ul className="space-y-2 pt-3 border-t border-border/40 mt-auto">
                   {edu.highlights.map((h, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2 text-xs text-foreground/80"
+                      className="flex items-start gap-2.5 text-xs text-foreground/80 leading-relaxed"
                     >
                       <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 mt-0.5 shrink-0" />
                       <span>{h}</span>
@@ -172,29 +174,32 @@ export default function ExperiencePage() {
           Organizational Leadership
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {leadershipExperience.map((lead) => (
             <Card key={lead.id} className="border-border/80 flex flex-col justify-between">
-              <CardHeader className="space-y-1">
+              <CardHeader className="space-y-1.5 pb-3">
                 <div className="text-xs font-mono text-muted-foreground">
                   {lead.period}
                 </div>
-                <CardTitle className="text-base">{lead.role}</CardTitle>
-                <div className="text-xs text-muted-foreground">
+                <CardTitle className="text-base leading-snug md:min-h-[2.75rem] flex items-start">
+                  {lead.role}
+                </CardTitle>
+                <div className="text-xs text-muted-foreground md:min-h-[1.25rem] font-medium flex items-center">
                   {lead.organization}
                 </div>
               </CardHeader>
-              <CardContent className="space-y-3 mt-auto">
-                <p className="text-xs text-muted-foreground leading-relaxed">
+              <CardContent className="space-y-3 flex-1 flex flex-col justify-between pt-0">
+                <p className="text-xs text-muted-foreground leading-relaxed md:min-h-[3.75rem]">
                   {lead.description}
                 </p>
-                <ul className="space-y-1">
+                <ul className="space-y-1.5 pt-3 border-t border-border/40 mt-auto">
                   {lead.highlights.map((h, i) => (
                     <li
                       key={i}
-                      className="text-[11px] text-foreground/75 leading-relaxed"
+                      className="flex items-start gap-2 text-[11px] text-foreground/80 leading-relaxed"
                     >
-                      • {h}
+                      <span className="h-1 w-1 rounded-full bg-amber-500 mt-1.5 shrink-0" />
+                      <span>{h}</span>
                     </li>
                   ))}
                 </ul>
@@ -246,7 +251,7 @@ export default function ExperiencePage() {
                       <ExternalLink className="h-3.5 w-3.5 text-muted-foreground/40 group-hover:text-sky-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
                     )}
                   </div>
-                  <h3 className="text-sm font-semibold text-foreground leading-snug group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                  <h3 className="text-sm font-semibold text-foreground leading-snug sm:min-h-[2.5rem] flex items-start group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
                     {cert.title}
                   </h3>
                 </div>

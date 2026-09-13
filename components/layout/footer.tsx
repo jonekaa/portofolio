@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { profileData } from "@/lib/data/profile";
 import { Mail, Globe } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/ui/icons";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -42,6 +42,16 @@ export function Footer() {
               title="LinkedIn Profile"
             >
               <LinkedinIcon className="h-4 w-4" />
+            </a>
+            <a
+              href={profileData.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md p-2 hover:bg-muted hover:text-foreground transition-colors"
+              aria-label="Instagram Profile"
+              title="Instagram Profile"
+            >
+              <InstagramIcon className="h-4 w-4" />
             </a>
             <a
               href={`mailto:${profileData.email}`}

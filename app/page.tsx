@@ -22,7 +22,7 @@ import {
   CheckCircle2,
   FileText,
 } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/ui/icons";
 
 export default async function HomePage() {
   const allProjects = await getProjects();
@@ -103,6 +103,16 @@ export default async function HomePage() {
               title="LinkedIn Profile"
             >
               <LinkedinIcon className="h-4 w-4" />
+            </a>
+            <a
+              href={profileData.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md border border-border/80 p-2.5 hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Instagram Profile"
+              title="Instagram Profile"
+            >
+              <InstagramIcon className="h-4 w-4" />
             </a>
           </div>
         </FadeIn>

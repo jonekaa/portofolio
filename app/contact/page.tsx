@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { FadeIn } from "@/components/animations/motion";
 import { Mail, MapPin, MessageSquare, ShieldCheck } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/ui/icons";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -90,6 +90,21 @@ export default function ContactPage() {
                   <div className="text-xs truncate">
                     <div className="font-medium text-foreground">GitHub</div>
                     <div className="text-muted-foreground">github.com/jonekaa</div>
+                  </div>
+                </a>
+
+                <a
+                  href={profileData.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm text-foreground hover:text-rose-500 transition-colors group"
+                >
+                  <div className="rounded bg-muted p-2 group-hover:bg-rose-500/10 transition-colors">
+                    <InstagramIcon className="h-4 w-4 text-rose-500" />
+                  </div>
+                  <div className="text-xs truncate">
+                    <div className="font-medium text-foreground">Instagram</div>
+                    <div className="text-muted-foreground">@jonekaa_</div>
                   </div>
                 </a>
 

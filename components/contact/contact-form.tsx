@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, ContactFormData } from "@/lib/validations/contact";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, AlertCircle, Loader2, Send } from "lucide-react";
+import { CheckCircle2, AlertCircle, Loader2, Send, Mail, ArrowUpRight } from "lucide-react";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -15,6 +15,7 @@ export function ContactForm() {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -26,6 +27,8 @@ export function ContactForm() {
       website_url_hp: "",
     },
   });
+
+  const formData = watch();
 
   const onSubmit = async (data: ContactFormData) => {
     setStatus("submitting");
@@ -85,11 +88,31 @@ export function ContactForm() {
 
       {/* Error Notification */}
       {status === "error" && (
-        <div className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4 text-sm text-rose-600 dark:text-rose-400 flex items-start gap-3">
-          <AlertCircle className="h-5 w-5 mt-0.5 shrink-0" />
-          <div>
-            <p className="font-semibold">Message delivery error</p>
-            <p className="text-xs mt-0.5 opacity-90">{errorMessage}</p>
+        <div className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4 text-sm text-rose-600 dark:text-rose-400 space-y-3">
+          <div className="flex items-start gap-3">
+            <AlertCircle className="h-5 w-5 mt-0.5 shrink-0" />
+            <div className="space-y-1">
+              <p className="font-semibold">Message delivery notice</p>
+              <p className="text-xs leading-relaxed opacity-95">{errorMessage}</p>
+            </div>
+          </div>
+
+          <div className="pt-2 border-t border-rose-500/20 flex flex-wrap items-center gap-3">
+            <a
+              href={`mailto:jonathansaputra03@gmail.com?subject=${encodeURIComponent(
+                formData.subject || "Portfolio Inquiry"
+              )}&body=${encodeURIComponent(
+                `Hi Jonathan,\n\n${formData.message || ""}\n\n---\nSent by: ${
+                  formData.name || "A visitor"
+                } (${formData.email || "No email provided"})`
+              )}`}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-rose-600 text-white hover:bg-rose-700 dark:bg-rose-500 dark:hover:bg-rose-600 text-xs font-semibold shadow-sm transition-all"
+            >
+              <Mail className="h-3.5 w-3.5" /> Send via your Email App (Pre-filled) <ArrowUpRight className="h-3 w-3" />
+            </a>
+            <span className="text-[11px] opacity-75">
+              Your message is preserved and won&apos;t be lost.
+            </span>
           </div>
         </div>
       )}
@@ -179,23 +202,35 @@ export function ContactForm() {
         )}
       </div>
 
-      {/* Submit Button */}
-      <Button
-        type="submit"
-        size="lg"
-        disabled={status === "submitting"}
-        className="w-full sm:w-auto gap-2 font-medium"
-      >
-        {status === "submitting" ? (
-          <>
-            <Loader2 className="h-4 w-4 animate-spin" /> Sending message...
-          </>
-        ) : (
-          <>
-            <Send className="h-4 w-4" /> Send Message
-          </>
-        )}
-      </Button>
+      {/* Submit Button & Direct Option */}
+      <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <Button
+          type="submit"
+          size="lg"
+          disabled={status === "submitting"}
+          className="w-full sm:w-auto gap-2 font-medium"
+        >
+          {status === "submitting" ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" /> Sending message...
+            </>
+          ) : (
+            <>
+              <Send className="h-4 w-4" /> Send Message
+            </>
+          )}
+        </Button>
+
+        <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+          <span>Prefer direct email?</span>
+          <a
+            href="mailto:jonathansaputra03@gmail.com"
+            className="text-sky-600 dark:text-sky-400 font-mono font-medium hover:underline inline-flex items-center gap-1"
+          >
+            <Mail className="h-3 w-3" /> jonathansaputra03@gmail.com
+          </a>
+        </div>
+      </div>
     </form>
   );
 }

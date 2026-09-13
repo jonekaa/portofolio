@@ -15,6 +15,7 @@ export interface Profile {
   phone: string;
   github: string;
   linkedin: string;
+  instagram: string;
   status: {
     available: boolean;
     text: string;
@@ -35,6 +36,7 @@ export const profileData: Profile = {
   phone: "+6287775080483",
   github: "https://github.com/jonekaa",
   linkedin: "https://linkedin.com/in/jonekaa",
+  instagram: "https://www.instagram.com/jonekaa_",
   status: {
     available: true,
     text: "Open for Remote Opportunities (Global & Local)",
